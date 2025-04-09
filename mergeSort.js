@@ -1,18 +1,18 @@
 const merge = function (leftArray, rightArray) {
-    let resultArray = [], leftIndex = 0, rightIndex = 0;
+    let result = [], leftIndex = 0, rightIndex = 0;
 
     // compare both arrays starting from element 0
     while (leftIndex < leftArray.length && rightIndex < rightArray.length) {
         if (leftArray[leftIndex] < rightArray[rightIndex]) {
-            resultArray.push(leftArray[leftIndex]);
+            result.push(leftArray[leftIndex]);
             leftIndex++;
         } else {
-            resultArray.push(rightArray[rightIndex])
+            result.push(rightArray[rightIndex])
             rightIndex++;
         }
     }
 
-    return resultArray
+    return result
         .concat(leftArray.slice(leftIndex))
         .concat(rightArray.slice(rightIndex));
 }
